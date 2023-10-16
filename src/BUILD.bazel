@@ -6,6 +6,6 @@ cc_binary(
     srcs = [
         "main.cpp",
         ],
-    deps = ["@mujoco//:mujoco"],
+    deps = ["@mujoco"],
     visibility = ["//visibility:public"],
 )
