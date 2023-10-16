@@ -60,7 +60,7 @@ def mujoco_deps():
 
     _maybe(
         new_git_repository,
-        name = "_mujoco",
+        name = "C_mujoco",
         build_file = "@mujoco//:external/mujoco/BUILD.bazel",
         commit = "573d331b69845c5d651b70f5d1b0f3a0d2a3a233",
         remote = "https://github.com/deepmind/mujoco.git",
