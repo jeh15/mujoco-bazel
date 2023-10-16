@@ -5,10 +5,5 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "@_mujoco//:_mujoco",
-        "@ccd//:ccd",
-        "@lodepng//:lodepng",
-        "@qhull//:qhull",
-        "@tinyobjloader//:tinyobjloader",
-        "@tinyxml2//:tinyxml2",
     ],
 )
