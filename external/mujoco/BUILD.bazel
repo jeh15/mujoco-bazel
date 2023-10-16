@@ -1,7 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name = "mujoco",
+    name = "_mujoco",
     srcs = glob([
         "src/**/*.c",
         "src/**/*.cc",

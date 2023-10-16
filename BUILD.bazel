@@ -1,1 +1,14 @@
 package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "mujoco",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@_mujoco//:_mujoco",
+        "@ccd//:ccd",
+        "@lodepng//:lodepng",
+        "@qhull//:qhull",
+        "@tinyobjloader//:tinyobjloader",
+        "@tinyxml2//:tinyxml2",
+    ],
+)

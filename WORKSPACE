@@ -1,4 +1,4 @@
-workspace(name = "mujoco_bazel")
+workspace(name = "mujoco")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 
@@ -43,7 +43,7 @@ new_git_repository(
 )
 
 new_git_repository(
-    name = "mujoco",
+    name = "_mujoco",
     build_file = "//external/mujoco:BUILD.bazel",
     commit = "573d331b69845c5d651b70f5d1b0f3a0d2a3a233",
     remote = "https://github.com/deepmind/mujoco.git",
