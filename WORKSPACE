@@ -19,9 +19,8 @@ new_git_repository(
 new_git_repository(
     name = "tinyobjloader",
     build_file = "//external/tinyobjloader:BUILD.bazel",
-    commit = "8322e00ae685ea623ab6ac5a6cebcfa2d22fbf93",
+    commit = "ee45fb41db95bf9563f2a41bc63adfa18475c2ee",
     remote = "https://github.com/tinyobjloader/tinyobjloader.git",
-    shallow_since = "1640603894 +0900",
 )
 
 new_git_repository(
