@@ -17,18 +17,16 @@ def mujoco_deps():
         new_git_repository,
         name = "lodepng",
         build_file = "@mujoco//:external/lodepng/BUILD.bazel",
-        commit = "5601b8272a6850b7c5d693dd0c0e16da50be8d8d",
+        commit = "c18b949b71f45e78b1f9a28c5d458bce0da505d6",
         remote = "https://github.com/lvandeve/lodepng.git",
-        shallow_since = "1641772872 +0100",
     )
 
     _maybe(
         new_git_repository,
         name = "tinyxml2",
         build_file = "@mujoco//:external/tinyxml2/BUILD.bazel",
-        commit = "e45d9d16d430a3f5d3eee9fe40d5e194e1e5e63a",
+        commit = "1dee28e51f9175a31955b9791c74c430fe13dc82",
         remote = "https://github.com/leethomason/tinyxml2.git",
-        shallow_since = "1648934420 -0700",
     )
 
     _maybe(
@@ -37,7 +35,6 @@ def mujoco_deps():
         build_file = "@mujoco//:external/tinyobjloader/BUILD.bazel",
         commit = "8322e00ae685ea623ab6ac5a6cebcfa2d22fbf93",
         remote = "https://github.com/tinyobjloader/tinyobjloader.git",
-        shallow_since = "1640603894 +0900",
     )
 
     _maybe(
@@ -46,23 +43,20 @@ def mujoco_deps():
         build_file = "@mujoco//:external/ccd/BUILD.bazel",
         commit = "7931e764a19ef6b21b443376c699bbc9c6d4fba8",
         remote = "https://github.com/danfis/libccd.git",
-        shallow_since = "1545480825 +0100",
     )
 
     _maybe(
         new_git_repository,
         name = "qhull",
         build_file = "@mujoco//:external/qhull/BUILD.bazel",
-        commit = "3df027b91202cf179f3fba3c46eebe65bbac3790",
+        commit = "613debeaea72ee66626dace9ba1a2eff11b5d37d",
         remote = "https://github.com/qhull/qhull.git",
-        shallow_since = "1636586665 -0500",
     )
 
     _maybe(
         new_git_repository,
         name = "C_mujoco",
         build_file = "@mujoco//:external/mujoco/BUILD.bazel",
-        commit = "573d331b69845c5d651b70f5d1b0f3a0d2a3a233",
+        commit = "c9246e1f5006379d599e0bcddf159a8616d31441",
         remote = "https://github.com/deepmind/mujoco.git",
-        shallow_since = "1666075079 -0700",
     )
