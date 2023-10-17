@@ -1,7 +1,9 @@
 # Mujoco build for Bazel:
-Isolated Bazel build for Mujoco. 
+Bazel build for Mujoco. 
 
-This repository is a stripped version of [Mujoco for Swift](https://github.com/liuliu/swift-mujoco/tree/main) to target Mujoco's C API.
+This repository is based on the bazel builds from [Mujoco for Swift](https://github.com/liuliu/swift-mujoco/tree/main) to target Mujoco's C API.
+
+Currently, this repository targets Mujoco 2.3.7.
 
 ## Installation:
 Add the following to your `WORKSPACE` file:
