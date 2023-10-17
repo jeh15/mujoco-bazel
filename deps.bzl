@@ -33,7 +33,7 @@ def mujoco_deps():
         new_git_repository,
         name = "tinyobjloader",
         build_file = "@mujoco//:external/tinyobjloader/BUILD.bazel",
-        commit = "ee45fb41db95bf9563f2a41bc63adfa18475c2ee"
+        commit = "ee45fb41db95bf9563f2a41bc63adfa18475c2ee",
         remote = "https://github.com/tinyobjloader/tinyobjloader.git",
     )
 
