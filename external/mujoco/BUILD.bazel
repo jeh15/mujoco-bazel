@@ -2,7 +2,7 @@ package(default_visibility = ["//visibility:public"])
 
 link_options = select({
     "@bazel_tools//src/conditions:darwin": ["-undefined dynamic_lookup"],
-    "//conditions:default": [],
+    "//conditions:default": ["--shared"],
 })
 
 cc_library(
