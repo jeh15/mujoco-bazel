@@ -9,17 +9,13 @@ cc_library(
         "src/**/*.inc",
     ]),
     hdrs = glob(["include/mujoco/*.h"]),
-    copts = [
-        "-fPIC",
-    ],
+    copts = ["-fPIC"],
     defines = ["mjUSEPLATFORMSIMD"],
     includes = [
         "include",
         "src",
     ],
-    linkopts = [
-        "-undefined dynamic_lookup",
-    ],
+    linkopts = [],
     local_defines = [
         "_GNU_SOURCE",
         "CCD_STATIC_DEFINE",
