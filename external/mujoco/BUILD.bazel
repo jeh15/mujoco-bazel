@@ -1,5 +1,10 @@
 package(default_visibility = ["//visibility:public"])
 
+link_options = select({
+    "@bazel_tools//src/conditions:darwin": ["-undefined dynamic_lookup"],
+    "//conditions:default": [],
+})
+
 cc_library(
     name = "C_mujoco",
     srcs = glob([
@@ -17,9 +22,7 @@ cc_library(
         "include",
         "src",
     ],
-    linkopts = [
-        "-undefined dynamic_lookup",
-    ],
+    linkopts = link_options,
     local_defines = [
         "_GNU_SOURCE",
         "CCD_STATIC_DEFINE",
