@@ -1,9 +1,15 @@
 # Mujoco build for Bazel:
 Bazel build for Mujoco. 
 
-This repository is based on the bazel builds from [Mujoco for Swift](https://github.com/liuliu/swift-mujoco/tree/main) to target Mujoco's C API.
+This repository can be used as an external dependency to target mujoco.
 
-Currently, this repository targets Mujoco 2.3.7.
+## Linux:
+The `main` branch exports the linux x86_64 pre-built binaries as a `cc_library`.
+The main branch targets Mujoco 3.0.0.
+
+## MacOS:
+For MacOS us the `macos` branch. The macos branch builds mujoco and all of its dependencies from scratch and exports mujoco as a 'cc_library'.
+The macos branch targets Mujoco 2.3.7.
 
 ## Installation:
 Add the following to your `WORKSPACE` file:
