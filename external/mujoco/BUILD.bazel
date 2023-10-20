@@ -11,7 +11,7 @@ link_options = select({
 compile_options = select({
     "@bazel_tools//src/conditions:darwin": [],
     "//conditions:default": [
-        "-Werror"
+        "-Werror",
         "-Wall",
         "-Wpedantic",
         "-Wimplicit-fallthrough",
