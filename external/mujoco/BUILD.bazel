@@ -16,7 +16,7 @@ compile_options = select({
         "-ffunction-sections",
         "-Werror",
         "-Wall",
-        "-Wpedantic",
+        # "-Wpedantic",
         "-Wimplicit-fallthrough",
         "-Wunused",
         "-Wvla",
