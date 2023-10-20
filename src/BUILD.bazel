@@ -1,0 +1,14 @@
+package(default_visibility = ["//visibility:public"])
+
+# Use @ when targeting external deps (i.e. github), (Depends on what you named these deps)
+cc_binary(
+    name = "main",
+    srcs = [
+        "main.cpp",
+    ],
+    data = [
+        ":block.xml",
+    ],
+    deps = ["@mujoco//:mujoco"],
+    visibility = ["//visibility:public"],
+)
