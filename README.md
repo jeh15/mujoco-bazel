@@ -11,7 +11,7 @@ Add the following to your `WORKSPACE` file:
 ```python
 git_repository(
     name = "mujoco",
-    branch = "main",
+    branch = "macos",
     remote = "https://github.com/jeh15/mujoco_bazel.git",
 )
 
