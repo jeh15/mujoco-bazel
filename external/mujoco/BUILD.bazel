@@ -12,6 +12,8 @@ link_options = select({
 compile_options = select({
     "@bazel_tools//src/conditions:darwin": [],
     "//conditions:default": [
+        "-fdata-sections",
+        "-ffunction-sections",
         "-Werror",
         "-Wall",
         "-Wpedantic",
@@ -23,6 +25,7 @@ compile_options = select({
         "-Wno-unknown-pragmas",
         "-Wimplicit-fallthrough=5",
         "-Wno-maybe-uninitialized",
+        "-mavx",
     ],
 })
 
