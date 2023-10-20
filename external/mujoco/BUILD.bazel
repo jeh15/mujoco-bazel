@@ -4,6 +4,7 @@ link_options = select({
     "@bazel_tools//src/conditions:darwin": ["-undefined dynamic_lookup"],
     "//conditions:default": [
         "--shared",
+        "-fuse-ld=gold",
         "-Wl,--gc-sections",
     ],
 })
@@ -22,8 +23,7 @@ compile_options = select({
         "-Wno-unknown-pragmas",
         "-Wimplicit-fallthrough=5",
         "-Wno-maybe-uninitialized",
-        "-mavx",
-        # "-march=native",
+        "-march=native",
     ],
 })
 
