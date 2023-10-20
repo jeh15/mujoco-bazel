@@ -1,15 +1,24 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+# load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
 
-cmake(
-    name = "C_mujoco",
-    cache_entries = {
-        "CMAKE_C_FLAGS": "-fPIC",
-    },
-    lib_source = "@C_mujoco//:all_srcs",
-    out_shared_libs = [
-        "libmujoco.so",
+# cmake(
+#     name = "C_mujoco",
+#     cache_entries = {
+#         "CMAKE_C_FLAGS": "-fPIC",
+#     },
+#     lib_source = "@C_mujoco//:all_srcs",
+#     out_shared_libs = [
+#         "libmujoco.so",
+#         "libmujoco.so.3.0.0",
+#     ],
+# )
+
+cc_import(
+  name = "C_mujoco",
+  hdrs = glob(["**.h"]),
+  shared_libs = [
+        "@libmujoco.so",
         "libmujoco.so.3.0.0",
     ],
 )

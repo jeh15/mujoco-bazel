@@ -69,14 +69,21 @@ filegroup(
 )
 """
 
-# pcre source code repository
 http_archive(
     name = "C_mujoco",
     build_file_content = _ALL_CONTENT,
-    strip_prefix = "mujoco-3.0.0",
+    strip_prefix = "mujoco-3.0.0-linux-x86_64",
     urls = [
-        "https://github.com/google-deepmind/mujoco/archive/refs/tags/3.0.0.tar.gz",
+        "https://github.com/google-deepmind/mujoco/releases/download/3.0.0/mujoco-3.0.0-linux-x86_64.tar.gz",
     ],
-    sha256 = "b0108b44a4913c6d49a2fea382e684d10d0c43f51ac7d317d3c73fe66f120c33",
+    # sha256 = "b0108b44a4913c6d49a2fea382e684d10d0c43f51ac7d317d3c73fe66f120c33",
 )
 
+# load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
+
+# new_git_repository(
+#     name = "C_mujoco",
+#     build_file_content = _ALL_CONTENT,
+#     branch = "main",
+#     remote = "git@github.com:jeh15/mujoco.git",
+# )
