@@ -2,7 +2,28 @@ package(default_visibility = ["//visibility:public"])
 
 link_options = select({
     "@bazel_tools//src/conditions:darwin": ["-undefined dynamic_lookup"],
-    "//conditions:default": ["--shared"],
+    "//conditions:default": [
+        "--shared",
+        "-Wl,--gc-sections",
+    ],
+})
+
+compile_options = select({
+    "@bazel_tools//src/conditions:darwin": [],
+    "//conditions:default": [
+        "-Werror"
+        "-Wall",
+        "-Wpedantic",
+        "-Wimplicit-fallthrough",
+        "-Wunused",
+        "-Wvla",
+        "-Wno-int-in-bool-context",
+        "-Wno-sign-compare",
+        "-Wno-unknown-pragmas",
+        "-Wimplicit-fallthrough=5",
+        "-Wno-maybe-uninitialized",
+        "-march=native",
+    ],
 })
 
 cc_library(
