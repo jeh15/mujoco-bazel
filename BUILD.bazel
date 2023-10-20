@@ -4,6 +4,6 @@ cc_library(
     name = "mujoco",
     visibility = ["//visibility:public"],
     deps = [
-        "@mujoco_linux//:mujoco_lib",
+        "@mujoco_archive//:mujoco_lib",
     ],
 )

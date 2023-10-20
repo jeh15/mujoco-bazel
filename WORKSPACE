@@ -3,8 +3,8 @@ workspace(name = "mujoco")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "mujoco_linux",
-    build_file = "//external/mujoco_linux:BUILD.bazel",
+    name = "mujoco_archive",
+    build_file = "//external/mujoco_archive:BUILD.bazel",
     strip_prefix = "mujoco-3.0.0",
     urls = [
         "https://github.com/google-deepmind/mujoco/releases/download/3.0.0/mujoco-3.0.0-linux-x86_64.tar.gz",
