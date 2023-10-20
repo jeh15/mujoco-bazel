@@ -8,7 +8,7 @@ The `main` branch exports the linux x86_64 pre-built binaries as a `cc_library`.
 The main branch targets Mujoco 3.0.0.
 
 ## MacOS:
-For MacOS us the `macos` branch. The macos branch builds mujoco and all of its dependencies from scratch and exports mujoco as a 'cc_library'.
+For MacOS use the `macos` branch. The macos branch builds mujoco and all of its dependencies from scratch and exports mujoco as a 'cc_library'.
 The macos branch targets Mujoco 2.3.7.
 
 ## Installation:
