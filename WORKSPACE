@@ -71,6 +71,7 @@ filegroup(
 
 http_archive(
     name = "C_mujoco",
+    build_file = "//external/mujoco:BUILD.bazel",
     build_file_content = _ALL_CONTENT,
     strip_prefix = "mujoco-3.0.0-linux-x86_64",
     urls = [

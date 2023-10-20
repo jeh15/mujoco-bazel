@@ -16,9 +16,9 @@ package(default_visibility = ["//visibility:public"])
 
 cc_import(
   name = "C_mujoco",
-  hdrs = glob(["**.h"]),
+  hdrs = [],
   shared_libs = [
-        "@libmujoco.so",
+        "libmujoco.so",
         "libmujoco.so.3.0.0",
     ],
 )
