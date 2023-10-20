@@ -23,7 +23,6 @@ compile_options = select({
         "-Wno-unknown-pragmas",
         "-Wimplicit-fallthrough=5",
         "-Wno-maybe-uninitialized",
-        "-mavx",
     ],
 })
 
