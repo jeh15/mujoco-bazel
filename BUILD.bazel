@@ -3,8 +3,5 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "mujoco",
     visibility = ["//visibility:public"],
-    deps = select({
-        "@bazel_tools//src/conditions:darwin": ["@mujoco_macos_archive//:mujoco_lib_macos"],
-        "//conditions:default": ["@mujoco_archive//:mujoco_lib"],
-    }),
+    deps = ["@mujoco_archive//:mujoco_lib"],
 )
