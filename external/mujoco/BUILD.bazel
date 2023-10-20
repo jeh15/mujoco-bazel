@@ -1,39 +1,15 @@
 package(default_visibility = ["//visibility:public"])
 
-link_options = select({
-    "@bazel_tools//src/conditions:darwin": ["-undefined dynamic_lookup"],
-    "//conditions:default": ["--shared"],
-})
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
 
-cc_library(
+cmake(
     name = "C_mujoco",
-    srcs = glob([
-        "src/**/*.c",
-        "src/**/*.cc",
-        "src/**/*.h",
-        "src/**/*.inc",
-    ]),
-    hdrs = glob(["include/mujoco/*.h"]),
-    copts = [
-        "-fPIC",
-    ],
-    defines = ["mjUSEPLATFORMSIMD"],
-    includes = [
-        "include",
-        "src",
-    ],
-    linkopts = link_options,
-    local_defines = [
-        "_GNU_SOURCE",
-        "CCD_STATIC_DEFINE",
-        "MUJOCO_DLL_EXPORTS",
-    ],
-    visibility = ["//visibility:public"],
-    deps = [
-        "@ccd//:ccd",
-        "@lodepng//:lodepng",
-        "@qhull//:qhull",
-        "@tinyobjloader//:tinyobjloader",
-        "@tinyxml2//:tinyxml2",
+    cache_entries = {
+        "CMAKE_C_FLAGS": "-fPIC",
+    },
+    lib_source = "@C_mujoco//:all_srcs",
+    out_shared_libs = [
+        "libmujoco.so",
+        "libmujoco.so.3.0.0",
     ],
 )
