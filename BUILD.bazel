@@ -2,6 +2,5 @@ package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "mujoco",
-    visibility = ["//visibility:public"],
-    deps = ["@mujoco_archive//:mujoco_lib"],
+    deps = ["@archive_mujoco//:mujoco_lib"],
 )

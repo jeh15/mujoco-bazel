@@ -1,0 +1,11 @@
+"""
+    # Bazel Module to fetch compiled MuJoCo release 
+"""
+
+module(
+    name = "mujoco-bazel",
+)
+
+# Mujoco extension:
+mujoco_extension = use_extension("//third_party:extensions.bzl", "mujoco_extension")
+use_repo(mujoco_extension, "archive_mujoco")

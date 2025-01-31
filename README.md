@@ -5,29 +5,17 @@ This repository can be used as an external dependency to target mujoco.
 
 ## Linux:
 The `main` branch exports the linux x86_64 pre-built binaries as a `cc_library`.
-The main branch targets Mujoco 3.0.0.
+The main branch targets Mujoco 3.2.7
 
-## MacOS:
-For MacOS use the `macos` branch. The macos branch builds mujoco and all of its dependencies from scratch and exports mujoco as a `cc_library`.
-The macos branch targets Mujoco 2.3.7.
 
 ## Installation:
-Add the following to your `WORKSPACE` file:
+Add the following to your `MODULE` file:
 
 ```python
-git_repository(
-    name = "mujoco",
-    branch = "main",
-    remote = "https://github.com/jeh15/mujoco_bazel.git",
+bazel_dep(name = "mojoco-bazel")
+archive_override(
+    module_name = "mujoco-bazel",
+    strip_prefix = "mujoco-bazel-main",
+    urls = "https://github.com/jeh15/mujoco-bazel/archive/refs/heads/main.zip"
 )
-
-load("@mujoco//:deps.bzl", "mujoco_deps")
-
-mujoco_deps()
-```
-
-Additionally, make sure you are compiling with c++17.
-This can be added with a `.bazelrc` file with the following:
-```
-build --cxxopt='--std=c++17'
 ```
