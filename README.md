@@ -4,7 +4,7 @@ Bazel build for Mujoco.
 This repository can be used as an external dependency to target mujoco.
 
 ## Linux:
-The `main` branch exports the linux x86_64 pre-built binaries as a `cc_library`.
+The `main` branch exports the linux x86_64 and aarch64 pre-built binaries as a `cc_library`.
 The main branch targets Mujoco 3.2.7
 
 
@@ -18,4 +18,9 @@ archive_override(
     strip_prefix = "mujoco-bazel-main",
     urls = "https://github.com/jeh15/mujoco-bazel/archive/refs/heads/main.zip"
 )
+```
+
+The dependency target is:
+```python
+"@mujoco-bazel//:mujoco"
 ```
