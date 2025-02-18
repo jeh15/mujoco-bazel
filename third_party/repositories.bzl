@@ -7,7 +7,12 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 def mujoco_archive(ctx):
     version = "3.2.7"
     version_name = version.replace(".", "_")
-    url = "https://github.com/google-deepmind/mujoco/releases/download/{version}/mujoco-{version}-linux-x86_64.tar.gz".format(version=version)
+    cpu_platform = select({
+        "@platforms//cpu:x86_64": "linux-x86_64",
+        "@platforms//cpu:arm64": "linux-aarch64",
+        "@platforms//:incompatible": "",
+    })
+    url = "https://github.com/google-deepmind/mujoco/releases/download/{version}/mujoco-{version}-{cpu_platform}.tar.gz".format(version=version, cpu_platform=cpu_platform)
     build_file_content = """
 package(default_visibility = ["//visibility:public"])
 hdrs = glob(["include/mujoco/*.h"])
