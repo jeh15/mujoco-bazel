@@ -83,5 +83,5 @@ cc_library(
         build_file_content = build_file_content,
         strip_prefix = "mujoco-{version}".format(version=version),
         url = url,
-        integrity = "sha256-Ugpl+7C3XKxSRcwHUmhAVFwB+qNU8YxiOl5is2Vx7WE=",
+        integrity = "sha256-PvLoJliqa4GufO6wHtbo70waxtKkX9XJOqry7EkCWZg=",
     )
