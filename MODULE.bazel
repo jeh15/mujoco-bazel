@@ -6,6 +6,9 @@ module(
     name = "mujoco-bazel",
 )
 
+# platforms:
+bazel_dep(name = "platforms", version = "0.0.11")
+
 # Mujoco extension:
 mujoco_x86_64_extension = use_extension("//third_party:extensions.bzl", "mujoco_x86_64_extension")
 use_repo(mujoco_x86_64_extension, "archive_mujoco_x86_64")
