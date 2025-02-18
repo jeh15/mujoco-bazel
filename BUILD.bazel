@@ -2,5 +2,8 @@ package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "mujoco",
-    deps = ["@archive_mujoco//:mujoco_lib"],
+    deps = select({
+        "@platforms//cpu:x86_64": ["@archive_mujoco_x86_64//:mujoco_lib_linux_x86_64"],
+        "@platforms//cpu:aarch64": ["@archive_mujoco_aarch64//:mujoco_lib_linux_aarch64"],
+    }),
 )

@@ -7,5 +7,8 @@ module(
 )
 
 # Mujoco extension:
-mujoco_extension = use_extension("//third_party:extensions.bzl", "mujoco_extension")
-use_repo(mujoco_extension, "archive_mujoco")
+mujoco_x86_64_extension = use_extension("//third_party:extensions.bzl", "mujoco_x86_64_extension")
+use_repo(mujoco_x86_64_extension, "archive_mujoco_x86_64")
+
+mujoco_aarch64_extension = use_extension("//third_party:extensions.bzl", "mujoco_aarch64_extension")
+use_repo(mujoco_aarch64_extension, "archive_mujoco_aarch64")
